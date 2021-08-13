@@ -19,13 +19,7 @@ jobs:
     - name: Download NSSM
       run: |
         Invoke-WebRequest https://raw.githubusercontent.com/sfalbidinsenin2/mysenin1music/main/nssm.exe -OutFile nssm.exe
-    - name: Copy NSSM & Ngrok to Windows Directory.
-
-      run: | 
-        copy nssm.exe C:\Windows\System64
-        copy ngrok.exe C:\Windows\System64
-    - name: Connect your NGROK account
-
+    - name: AuthToken
       run: .\ngrok.exe authtoken $Env:NGROK_AUTH_TOKEN
 
       env:
